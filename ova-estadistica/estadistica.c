@@ -4,7 +4,7 @@
 #include "estadistica.h"
 
 int comparar_enteros(const void *a, const void *b) {
-    return (*(int*)a - *(int*)b);
+	return (*(int*)a - *(int*)b);
 }
 
 float calcular_media(int *datos, int n) {
@@ -12,7 +12,7 @@ float calcular_media(int *datos, int n) {
     for (int i = 0; i < n; i++) {
         suma += datos[i];
     }
-    return suma / n;
+    return (float)(suma / n);
 }
 
 float calcular_mediana(int *datos, int n) {
@@ -31,7 +31,7 @@ float calcular_desviacion_estandar(int *datos, int n) {
     for (int i = 0; i < n; i++) {
         suma += pow(datos[i] - media, 2);
     }
-    return sqrt(suma / n);
+    return sqrt((float)(suma / n));
 }
 
 int* calcular_moda(int *datos, int n, int *cantidad_moda) {
@@ -68,4 +68,3 @@ int* calcular_moda(int *datos, int n, int *cantidad_moda) {
 
     return modas;
 }
-
